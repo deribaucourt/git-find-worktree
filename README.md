@@ -47,6 +47,4 @@ Foud a closer commit: 329665d68b17479ccd11fa60479c9c7a8b2355a8 with 266970 diffe
 Foud a closer commit: 30a1502c5a62b5cc411bb9bfb2b6706b9e39f6d6 with 266940 differences
 Foud a closer commit: 2e18f8f8180743d311b2690a275de3a3b9c0a140 with 266939 differences
 Foud a closer commit: 8f02ab63160ddd234a8a0c028696be23388cd61e with 266850 differences
-
-Closest commit is 8f02ab63160ddd234a8a0c028696be23388cd61e with 266850 differences
 ```

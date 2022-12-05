@@ -10,12 +10,13 @@ TOOL_PATH=$(dirname $0)
 
 git rev-list ${BRANCH} | while read REVISION; do
     DIFFS=$(git diff -w --shortstat ${REVISION} | awk -f ${TOOL_PATH}/diff-shortstat.awk)
+    if [ -z "${DIFFS}" ]; then
+        echo "Found the exact commit: " ${REVISION}
+        exit 0
+    fi
     if [ -z "${MIN_REV}" ] || [ ${DIFFS} -lt ${MIN_DIFFS} ]; then
         MIN_DIFFS=${DIFFS}
         MIN_REV=${REVISION}
         echo "Foud a closer commit: ${MIN_REV} with ${MIN_DIFFS} differences"
     fi
 done
-
-echo
-echo "Closest commit is ${MIN_REV} with ${MIN_DIFFS} differences"
