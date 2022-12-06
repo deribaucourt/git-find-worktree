@@ -9,7 +9,7 @@ BRANCH=$1
 TOOL_PATH=$(dirname $0)
 
 git rev-list ${BRANCH} | while read REVISION; do
-    DIFFS=$(git diff -w --shortstat ${REVISION} | awk -f ${TOOL_PATH}/diff-shortstat.awk)
+    DIFFS=$(git diff --cached -w --shortstat ${REVISION} | awk -f ${TOOL_PATH}/diff-shortstat.awk)
     if [ -z "${DIFFS}" ]; then
         echo "Found the exact commit: " ${REVISION}
         exit 0

@@ -34,6 +34,7 @@ The following packages are required:
 
  $ rm -rf *
  $ cp -r <local-working-tree>/* .
+ $ git add -a
 
 3. Run the script with the name of the branch you want to examine.
 
