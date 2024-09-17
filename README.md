@@ -27,18 +27,18 @@ The following packages are required:
 
 1. Clone the original repository corresponding to the working tree.
 
- $ git clone <url>
- $ cd <repository>
+- $ git clone <url>
+- $ cd <repository>
 
 2. Erase all contents except the .git and overwrite with your working tree.
 
- $ rm -rf *
- $ cp -r <local-working-tree>/* .
- $ git add -a
+- $ rm -rf *
+- $ cp -r <local-working-tree>/* .
+- $ git add -A
 
 3. Run the script with the name of the branch you want to examine.
 
- $ <path-to-this-tool>/git-find-worktree.sh master
+- $ <path-to-this-tool>/git-find-worktree.sh master
 
 You will get results like this:
 
@@ -49,3 +49,7 @@ Foud a closer commit: 30a1502c5a62b5cc411bb9bfb2b6706b9e39f6d6 with 266940 diffe
 Foud a closer commit: 2e18f8f8180743d311b2690a275de3a3b9c0a140 with 266939 differences
 Foud a closer commit: 8f02ab63160ddd234a8a0c028696be23388cd61e with 266850 differences
 ```
+
+If you stop the process, you can start it again later by passing the hash of the last commit found
+
+- $ <path-to-this-tool>/git-find-worktree.sh 8f02ab63160ddd234a8a0c028696be23388cd61e
